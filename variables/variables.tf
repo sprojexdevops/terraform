@@ -1,3 +1,11 @@
+### Variables preference in Terraform ###
+# 1 ---> command line arguments, -var="<variable name>=value"  needs to be appended to plan and apply
+# 2 ---> tfvars file
+# 3 ---> Environment variable, 'export TF_VAR_<variable name>=value'
+# 4 ---> Default value 
+# 5 ---> prompt; if value is not declared in any of the above 4 it will prompt the user to provide value
+
+
 variable "ami_id" {
   type        = string
   default     = "ami-09c813fb71547fc4f"
