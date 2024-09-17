@@ -1,3 +1,3 @@
-output "ec2_instance_info" {
-  value = aws_instance.expense
-}
+# output "ec2_instance_info" {
+#   value = aws_instance.expense
+# }
