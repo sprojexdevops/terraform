@@ -13,11 +13,11 @@ variable "common_tags" {
 }
 
 variable "zone_id" {
-  type = string
+  type    = string
   default = "Z00458691QAOCFQ5Z2CDA"
 }
 
 variable "domain_name" {
-  type = string
+  type    = string
   default = "sprojex.in"
 }
