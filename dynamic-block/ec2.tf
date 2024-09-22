@@ -20,7 +20,7 @@ resource "aws_security_group" "allow_ssh_terraform" {
       to_port          = egress.value["to_port"]
       protocol         = egress.value["protocol"]
       cidr_blocks      = egress.value["cidr_blocks"]
-      ipv6_cidr_blocks = egress.value.ipv6_cidr_blocks    # can also call using dot(.) without []
+      ipv6_cidr_blocks = egress.value.ipv6_cidr_blocks # can also call using dot(.) without []
     }
   }
 

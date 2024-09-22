@@ -1,11 +1,11 @@
 variable "password" {
-    type = string
-    sensitive = true
+  type      = string
+  sensitive = true
 }
 
 variable "user_name" {
-    type = string
-    sensitive = true
+  type      = string
+  sensitive = true
 }
 
 # values can be passed using .tfvars or .tfvars.json files

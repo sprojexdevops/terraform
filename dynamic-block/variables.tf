@@ -1,5 +1,5 @@
 variable "instnace" {
-  type = map
+  type = map(any)
   default = {
     mysql    = "t3.small"
     backend  = "t3.micro"
@@ -18,7 +18,7 @@ variable "domain_name" {
 }
 
 variable "egress" {
-  type = list
+  type = list(any)
   default = [
     {
       from_port        = 22
@@ -38,7 +38,7 @@ variable "egress" {
 }
 
 variable "ingress" {
-  type = list
+  type = list(any)
   default = [
     {
       from_port        = 22

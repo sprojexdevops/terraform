@@ -7,33 +7,33 @@ resource "aws_instance" "terraform" {
     Name = "terraform"
   }
 
-# for local actions
+  # for local actions
   provisioner "local-exec" {
     command = "echo ${self.private_ip} > private_ip.txt"
   }
 
-# to perform remote actions
+  # to perform remote actions
   connection {
-    host = self.public_ip
-    type = "ssh"
-    user = var.user_name
+    host     = self.public_ip
+    type     = "ssh"
+    user     = var.user_name
     password = var.password
   }
 
   provisioner "remote-exec" {
-    inline = [ 
+    inline = [
       "sudo dnf install ansible -y",
       "sudo dnf install nginx -y",
       "sudo systemctl start nginx"
-     ]
+    ]
   }
 
-# for a graceful shutdown we can include the steps to stop certain processes before deleting the server
+  # for a graceful shutdown we can include the steps to stop certain processes before deleting the server
   provisioner "remote-exec" {
     when = destroy
-    inline = [ 
+    inline = [
       "sudo systemctl stop nginx"
-     ]
+    ]
   }
 
 }
