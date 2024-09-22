@@ -7,10 +7,12 @@ resource "aws_instance" "terraform" {
     Name = "terraform"
   }
 
+# for local actions
   provisioner "local-exec" {
     command = "echo ${self.private_ip} > private_ip.txt"
   }
 
+# to perform remote actions
   connection {
     host = self.public_ip
     type = "ssh"
