@@ -6,12 +6,12 @@ terraform {
     }
   }
 
-  backend "s3" {
-    bucket         = "sprojex-remote-state"
-    key            = "dynamic-block-demo"
-    region         = "us-east-1"
-    dynamodb_table = "tf-state-locking"
-  }
+  # backend "s3" {
+  #   bucket         = "sprojex-remote-state"
+  #   key            = "dynamic-block-demo"
+  #   region         = "us-east-1"
+  #   dynamodb_table = "tf-state-locking"
+  # }
 }
 
 provider "aws" {
